@@ -13,21 +13,11 @@ public class ColorBall  {
  private static int count = 1;
  private boolean goRight = true;
  private boolean goDown = true;
- 
-	public ColorBall(Context context, int drawable) {
-
-		BitmapFactory.Options opts = new BitmapFactory.Options();
-        opts.inJustDecodeBounds = true;
-        img = BitmapFactory.decodeResource(context.getResources(), drawable); 
-        id=count;
-		count++;
-
-	}
 	
 	public ColorBall(Context context, int drawable, Point point) {
 
-		BitmapFactory.Options opts = new BitmapFactory.Options();
-        opts.inJustDecodeBounds = true;
+		//BitmapFactory.Options opts = new BitmapFactory.Options();
+        //opts.inJustDecodeBounds = true;
         img = BitmapFactory.decodeResource(context.getResources(), drawable); 
         id=count;
 		count++;

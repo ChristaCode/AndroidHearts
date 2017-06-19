@@ -3,6 +3,7 @@ package course.examples.swipeheart;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -27,9 +28,9 @@ public class DrawView extends View {
         
                        
         // declare each ball with the ColorBall class
-        colorballs[0] = new ColorBall(context,R.drawable.bol_groen, point1);
-        colorballs[1] = new ColorBall(context,R.drawable.bol_rood, point2);
-        colorballs[2] = new ColorBall(context,R.drawable.bol_blauw, point3);
+        colorballs[0] = new ColorBall(context,R.drawable.heart, point1);
+        colorballs[1] = new ColorBall(context,R.drawable.heart, point2);
+        colorballs[2] = new ColorBall(context,R.drawable.heart, point3);
         
         
     }
@@ -40,7 +41,7 @@ public class DrawView extends View {
         
     	//draw the balls on the canvas
     	for (ColorBall ball : colorballs) {
-            canvas.drawBitmap(ball.getBitmap(), ball.getX(), ball.getY(), null);
+            canvas.drawBitmap(ball.getBitmap(),null,new Rect(ball.getX(), ball.getY(),ball.getX() + 100, ball.getY() + 100),null);
           }
 
     }
