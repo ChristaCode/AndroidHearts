@@ -13,7 +13,8 @@ public class ColorBall  {
  private static int count = 1;
  private boolean goRight = true;
  private boolean goDown = true;
-	
+ private int velocityX, velocityY = 1;
+
 	public ColorBall(Context context, int drawable, Point point) {
 
 		//BitmapFactory.Options opts = new BitmapFactory.Options();
@@ -23,7 +24,6 @@ public class ColorBall  {
 		count++;
 		coordX= point.x;
 		coordY = point.y;
-
 	}
 	
 	public static int getCount() {
@@ -82,6 +82,9 @@ public class ColorBall  {
 			coordY -= goY;
 		}
 		
+	}
+	public void updateBall() {
+		this.moveBall(getX() + velocityX, getY() + velocityY);
 	}
 	
 }

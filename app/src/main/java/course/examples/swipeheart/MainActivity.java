@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // draw the view
+        AppConstants.Initialization(this);
         setContentView(new course.examples.swipeheart.DrawView(this));
     }
 
