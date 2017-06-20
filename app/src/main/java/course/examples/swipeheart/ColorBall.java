@@ -13,7 +13,7 @@ public class ColorBall  {
  private static int count = 1;
  private boolean goRight = true;
  private boolean goDown = true;
- private int velocityX, velocityY = 1;
+ private int velocityX, velocityY = 0;
 
 	public ColorBall(Context context, int drawable, Point point) {
 
@@ -83,8 +83,10 @@ public class ColorBall  {
 		}
 		
 	}
+    /*
 	public void updateBall() {
 		this.moveBall(getX() + velocityX, getY() + velocityY);
 	}
-	
+	*/
+
 }

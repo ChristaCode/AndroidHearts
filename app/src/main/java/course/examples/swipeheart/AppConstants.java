@@ -12,6 +12,7 @@ import android.content.Context;
 public class AppConstants
 {
     static GameEngine _engine;
+    static DrawView drawView;
 
     public static int SCREEN_WIDTH,
             SCREEN_HEIGHT;

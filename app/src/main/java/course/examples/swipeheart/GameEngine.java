@@ -44,7 +44,7 @@ public class GameEngine extends Thread
            // AppConstants.GetEngine().Update();
 
             //locking the canvas
-            //Canvas canvas = _surfaceHolder.lockCanvas(null);
+         //   Canvas canvas = _surfaceHolder.lockCanvas(null);
 /*
             if (canvas != null)
             {
@@ -60,9 +60,10 @@ public class GameEngine extends Thread
             }
 */
             for (ColorBall ball : DrawView.colorballs) {
-                ball.updateBall();
+                //ball.updateBall();
             }
             //delay time
+            //AppConstants.drawView.postInvalidate();
             try
             {
                 Thread.sleep(DELAY);

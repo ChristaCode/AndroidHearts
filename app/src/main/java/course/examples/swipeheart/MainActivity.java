@@ -12,7 +12,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // draw the view
         AppConstants.Initialization(this);
-        setContentView(new course.examples.swipeheart.DrawView(this));
+        AppConstants.drawView = new course.examples.swipeheart.DrawView(this);
+        setContentView(AppConstants.drawView);
     }
 
     @Override

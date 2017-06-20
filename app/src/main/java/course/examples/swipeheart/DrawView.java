@@ -34,19 +34,7 @@ public class DrawView extends View {
         // declare each ball with the ColorBall class
         colorballs.add(new ColorBall(context,R.drawable.heart, point1));
         colorballs.add(new ColorBall(context,R.drawable.heart, point2));
-        colorballs.add(new ColorBall(context,R.drawable.heart, point3));
-        System.out.print("HELLO1 ");
-
-     /*   while(colorballs.size() > 0){
-            System.out.print("HELLO2 "
-            );
-
-            for (ColorBall b: colorballs){
-             //   b.updateBall();
-            }
-            SystemClock.sleep(1000);
-        }
-*/
+        colorballs.add(new ColorBall(context, R.drawable.heart, point3));
     }
     
     // the method that draws the balls
@@ -57,7 +45,6 @@ public class DrawView extends View {
     	for (ColorBall ball : colorballs) {
             canvas.drawBitmap(ball.getBitmap(),null,new Rect(ball.getX(), ball.getY(),ball.getX() + 100, ball.getY() + 100),null);
           }
-
     }
     
     // events when touching the screen
@@ -107,14 +94,18 @@ public class DrawView extends View {
 
             case MotionEvent.ACTION_UP:
                 // touch drop - just do things here after dropping
-
-                break;
-
+                if (balID > 0) {
+                    updateBall(colorballs.get(balID - 1));
+                }
         }
 
         // redraw the canvas
         invalidate(); 
         return true; 
 	
+    }
+
+    public void updateBall(ColorBall b){
+        b.moveBall(b.getX(), b.getY());
     }
 }
